@@ -6,7 +6,7 @@ function getCookies(req) {
     return CookieParser.parseCookies(req.headers.cookie);
 }
 
-class IndexModel {
+class IndexModel extends Model {
 
     Get(req) {
         return new ModelData({
