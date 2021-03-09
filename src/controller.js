@@ -41,16 +41,19 @@ class Controller {
             }
         }
 
-        res.render(this.view, data.data||{});
+        if (!data.headers.location && this.view) // Redirect
+            res.render(this.view, data.data || {});
+        else
+            res.end();
     }
 
-    Get(req, res) {
-        let data = this.model.Get(req);
+    async Get(req, res) {
+        let data = await this.model.Get(req);
         this.RespondWith(req, res, data);
     }
 
-    Post(req, res) {
-        let data = this.model.Post(req);
+    async Post(req, res) {
+        let data = await this.model.Post(req);
         this.RespondWith(req, res, data);
     }
 

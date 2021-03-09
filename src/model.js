@@ -3,11 +3,11 @@ const ModelData = require('./modelData');
 
 class Model {
 
-    Get(req) {
+    async Get(req) {
         return new ModelData();
     }
 
-    Post(req) {
+    async Post(req) {
         return new ModelData();
     }
 

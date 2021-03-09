@@ -17,6 +17,11 @@ class ModelData {
         return this;
     }
 
+    addData(obj) {
+        this.data = {...this.data, ...obj};
+        return this;
+    }
+
     setCookie(name, value) {
         this.cookies[name] = value;
         return this;

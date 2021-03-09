@@ -8,13 +8,13 @@ function getCookies(req) {
 
 class IndexModel extends Model {
 
-    Get(req) {
+    async Get(req) {
         return new ModelData({
             peopleName: getCookies(req).name || 'anonymous'
         });
     }
 
-    Post(req) {
+    async Post(req) {
 
         let data = new ModelData();
 
